@@ -30,18 +30,21 @@ function init(arg1, arg2, arg3) { // arg1 path arg2 filename arg3 -D switch
 }
 
 const arg1 = process.argv[1]; // gets app path here
-const arg2 = process.argv[2]; // expect to get filename here
-const arg3 = process.argv[3]; // expect to get -D param here
-if (arg2 === undefined) {
-    console.log(
+let arg2 = process.argv[2]; // expect to get filename here
+let arg3 = process.argv[3]; // expect to get -D param here
+if ((arg2 === undefined) && (arg2 !== "-D")) {
+    // console.log output is commented out for the purpose of user story.
+    //console.log(
     `         * ******************************************* *\n
          * Output file name is missing.                *\n
          * SYNTAX: node index.js <path\\filename> <-D> *\n
          * use <-D> switch to overwrite existing file  *\n
          * ******************************************* *`
-    );
+    //);
+    arg2 = "logo.svg";
+    init(arg1,arg2,arg3);
 
 } else {
-
+    if (arg2 === "-D") {arg2 = "logo.svg"; arg3 = "-D"};
     init(arg1, arg2, arg3);
 }

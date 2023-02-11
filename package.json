@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/vasilyl1/SVG-logo-maker#readme",
   "dependencies": {
+    "color-string": "^1.9.1",
     "inquirer": "^8.2.4"
   },
   "devDependencies": {
