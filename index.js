@@ -42,9 +42,9 @@ if ((arg2 === undefined) && (arg2 !== "-D")) {
          * ******************************************* *`
     //);
     arg2 = "logo.svg";
-    init(arg1,arg2,arg3);
+    init(arg1, arg2, arg3);
 
 } else {
-    if (arg2 === "-D") {arg2 = "logo.svg"; arg3 = "-D"};
+    if (arg2 === "-D") { arg2 = "logo.svg"; arg3 = "-D" };
     init(arg1, arg2, arg3);
 }
