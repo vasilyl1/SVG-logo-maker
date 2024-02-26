@@ -36,14 +36,19 @@ Step 4: launch the app by typing: node index.js
 
 ## Usage
 
-Once the app is launched, if there are no arguments provided (the user types node index.js from SVG-logo-maker directory), the app will check if the file with the default name of logo.svg is present in that directory. If the file is present, the app will suggest to use -D flag to overwrite it or to supply an additional argument which will can change the path and the name of the output file.
+Command line syntax to run the app:
+
+node index.js <path\\filename> <-D> <-Q>
+
+<-D> indicates rewrite if the file exists
+<-Q> indicates run QR code generator and not SVG logo
+
+QR code generator supports different file formats, defined by the output file name - such as PNG, SVG, JPEG, and others.
 
 The user will be asked a series of the questions to determine the style and the form of the SVG logo, including the text to be displayed in the center of the logo form.
-If more than 3 symbols are being supplied for the logo text, the dialog will prevent further questions and will request to enter up to 3 symbols.
+Maximum number of the letters for the logo is 3 - the validation will give it an error for all other inputs.
 
 The other questions allow to change the form of the logo - pre-defined options include circle, triangle and square, as well as background color of the image and the logo text. The colors can be input in a number of various ways - as a kewords (for exmaple blue, green, orange, white etc.), as a hex numbers (#FFF, etc.) or other more sophisticated ways as for example rgb(255,255,255,1).
-
-Once the questions are answered, the output file is being created at the path specified by the user or in the default directory if nothing has been specified as an argument in a command line. Please note that there is a way to create the files with the different extensions as for example .html file can be created too which may introduce the easier way to be displayed in the browser.
 
 Attached screenshot features on how the interview questions will look like and also allows to see some error diagnostic messages:
 
@@ -61,13 +66,16 @@ https://www.npmjs.com/package/inquirer/v/8.2.4
 Color-string parsing library has been used:
 https://www.npmjs.com/package/color-string
 
+QR-code library generation:
+https://www.npmjs.com/package/qrcode
+
 
 
 ## License
 
 MIT License
 
-Copyright (c) 2022 vasilyl1
+Copyright (c) 2024 vasilyl1
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
